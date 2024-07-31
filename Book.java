@@ -2,12 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.cen3024cmodule6softwareimplementationphase1logicandfunctionality;
+package com.mycompany.cen3024clms;
+
+//import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Name: Robiana Labady
  * Class: CEN3024C - Software Development 1
- * Date: June 24, 2024
+ * Date: July 30, 2024
  * Purpose: This class includes the variables needed for the each book: title, author, barcode, genre, status, and due date.
  * Purpose(cont): Setter and getter methods are included, as well as a formatted String output.
  */
@@ -35,6 +37,9 @@ class Book {
         this.genre = genre;
         this.status = status;
         this.dueDate = dueDate;
+    }
+
+    public Book(String part, String part1, String part2, String part3, Object status) {
     }
 
     //set title
@@ -77,7 +82,7 @@ class Book {
         return genre;
     }
 
-    
+
     //set status
     public void setStatus(String status) {
         this.status = status;
@@ -109,5 +114,5 @@ class Book {
         return title + " by " + author + " (Barcode = " + barcode +
                 ", Genre = " + genre + ", Status = " + status + ", Due Date = " + dueDate + ")";
     }//end toString
-    
+
 }//end Book class

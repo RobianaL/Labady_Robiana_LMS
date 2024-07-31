@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.cen3024cmodule6softwareimplementationphase1logicandfunctionality;
+package com.mycompany.cen3024clms;
 
 /**
  * Name: Robiana Labady
  * Class: CEN3024C - Software Development 1
- * Date: June 24, 2024
+ * Date: July 30, 2024
  * Purpose: This class includes methods for the actions the user can take regarding the collection.
  * Purpose(cont): The user can add books or remove them from the collection using its barcode or book title,
  * Purpose(cont): check in and out books, and list all books currently in the collection.
-*/
+ */
 
 import java.util.*;
 import java.util.Scanner;
@@ -43,49 +43,39 @@ class Library {
      */
     public void removeBookByBarcode(String barcode) {
         Book removeBookByBarcode = null;
-        
-        for (Book book : collection){
-            if (book.getBarcode() == barcode){
+
+        for (Book book : collection) {
+            if (book.getBarcode().equals(barcode)) {
                 removeBookByBarcode = book;
                 break;
-            }//end if
-        }//end for
-        
-        if (removeBookByBarcode != null){
+            }
+        }
+
+        if (removeBookByBarcode != null) {
             collection.remove(removeBookByBarcode);
             System.out.println("\nYou have removed " + removeBookByBarcode + " from CEN3024C's library collection.\n\n");
-        }//end if
-        else {
-            System.out.println("\nNo books have been found with the barcode " + barcode + " in CEN3024C's library collection.\n\n"); 
-        }//end else
-    }//end removeBookByBarcode
+        } else {
+            System.out.println("\nNo books have been found with the barcode " + barcode + " in CEN3024C's library collection.\n\n");
+        }
+    }
 
-    /**
-     * Method: removeBookByTitle
-     * Parameters: String title
-     * Return: none
-     * Purpose: Removes a book from the collection based on the ID number the user entered and then confirmations the removal was successful
-     * Purpose(cont): An error message is outputted if the entered book ID is not found in the collection
-     */
     public void removeBookByTitle(String title) {
         Book removeBookByTitle = null;
-        
-        for (Book book : collection){
-            if (book.getTitle() == title){
+
+        for (Book book : collection) {
+            if (book.getTitle().equals(title)) {
                 removeBookByTitle = book;
                 break;
-            }//end if
-        }//end for
-        
-        if (removeBookByTitle != null){
+            }
+        }
+
+        if (removeBookByTitle != null) {
             collection.remove(removeBookByTitle);
             System.out.println("\nYou have removed " + removeBookByTitle + " from CEN3024C's library collection.\n\n");
-        }//end if
-        else {
-            System.out.println("\nNo books have been found with the title " + title + " in CEN3024C's library collection.\n\n"); 
-        }//end else
-    }//end removeBookByTitle
-
+        } else {
+            System.out.println("\nNo books have been found with the title " + title + " in CEN3024C's library collection.\n\n");
+        }
+    }
     /**
      * Method: checkOutBook
      * Parameters: String title
@@ -142,5 +132,8 @@ class Library {
             }//end for
         }//end else
     }//end listAllBooks
-    
+
+    public List<Book> getBooks() {
+        return collection;
+    }
 }//end Library class
